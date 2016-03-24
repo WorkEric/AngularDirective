@@ -4,8 +4,15 @@
         .controller('page1Ctrl', function($scope) {
             $scope.title = 'Page 1';
         })
-        .controller('LoginCtrl', ['$scope', '$http',
-            function(scope, $http) {
+        .controller('page2Ctrl', function($scope){
+            $scope.title = 'Page 2';
+        })
+        .controller('LoginCtrl', ['$scope', '$http', '$location',
+            function(scope, $http, $location) {
+                scope.isActive = function(page){
+                    var current = "#" + $location.path();
+                    return page === current ? "active" : "";
+                };
                 $http.get('/api/login').success(function(resp) {
                     scope.loginInfo = resp;
                 });

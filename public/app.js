@@ -7,7 +7,8 @@
                 templateUrl: 'page1.html',
                 controller: 'page1Ctrl'
             }).when('/page2', {
-                templateUrl: 'page2.html'
+                templateUrl: 'page2.html',
+                controller: 'page2Ctrl'
             });
         })
         .directive('loginForm', function($http) {
