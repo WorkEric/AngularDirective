@@ -4,7 +4,7 @@ var Q = require('q');
 
 router.get('/', function(req, res, next) {
     var info = {}
-    if (req.session && !!req.session.user && !!req.session.user.username) 
+    if (req.session && !!req.session.user && !!req.session.user.username)
         info.username = req.session.user.username;
     res.json(info)
 });
@@ -44,8 +44,8 @@ router.post('/', function(req, res, next) {
     });
 });
 
-router.delete('/', function(req, res, next){
-    req.session.destroy(function(err){
+router.delete('/', function(req, res, next) {
+    req.session.destroy(function(err) {
         if (err) next(err)
         else res.json({})
     })
